@@ -1,0 +1,17 @@
+.cardSize{
+    width: 250px;
+    height: 350px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+.cardBtn{
+    width: 130px;
+    background-color: #ff5959;
+    color: white;
+}
+
+.imgcar{
+    width: 150px;
+    border-radius: 5px;
+}

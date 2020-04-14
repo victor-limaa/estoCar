@@ -3,13 +3,16 @@ const router = express.Router()
 const carController = require('../controllers/carController')
 const bodyParser = require('body-parser')
 
-router.get('/home', carController.listar)
+router.get('/home', bodyParser.json(), carController.listar)
+router.get('/home/:placa', bodyParser.json(), carController.listar)
 
-router.get('/:id', carController.visualizar)
+router.get('/:id', bodyParser.json(), carController.visualizar)
 
-router.post('/newCar', bodyParser, carController.cadastrar)
+router.delete('/:id', bodyParser.json(), carController.deletar)
 
-router.post('/:id/reservar', bodyParser, carController.reservar)
+router.post('/newCar', carController.cadastrar)
+
+router.post('/:id/reservar', carController.reservar)
 
 
 module.exports = router

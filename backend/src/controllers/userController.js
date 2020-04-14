@@ -40,8 +40,7 @@ userController = {
 
         const token = jwt.sign({_id: selectedUser._id}, process.env.TOKEN_SECRET)
 
-        res.header('authorization-token', token)
-        res.send('User Logged')
+        res.header('authorization-token', token).send(token)
     }
 }
 
