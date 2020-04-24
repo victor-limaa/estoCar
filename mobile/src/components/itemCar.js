@@ -1,80 +1,67 @@
 import React from 'react'
 import { StyleSheet, View, Text, ShadowPropTypesIOS, Image, ImageBackground } from 'react-native'
-import backgroundImage from '../../assets/background.png'
 
 export default function ItemCar(props){
 
     return(
-        <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-        <View>
-            <Image source={{uri: props.image}} style={styles.image} />
-            <View style={styles.box}>
-                <Text style={styles.placa}>{props.placa}</Text>
+        <View style={styles.container}>
+            <View>
+                <Image source={{uri: props.image}} style={styles.image} />
+                <View style={styles.modelo}>
+                    <Text style={styles.modeloText}>{props.modelo}</Text>
+                </View>
                 <Text style={styles.infoTitle}>Marca: </Text>
                 <Text style={styles.infoText}>{props.marca}</Text>
-                <Text style={styles.infoTitle}>Modelo: </Text>
-                <Text style={styles.infoText}>{props.modelo}</Text>
                 <Text style={styles.infoTitle}>Camio: </Text>
                 <Text style={styles.infoText}>{props.cambio}</Text>
                 <Text style={styles.infoTitle}>Itens do veículo: </Text>
-                <Text style={styles.infoText}>{props.opcionais}</Text>
+                <View style={styles.items}>{props.opcionais}</View>
                 
-                <Text style={styles.valor}>R${props.valor}</Text>
+                <Text style={styles.infoTitle}>Valor: </Text>
+                <Text style={styles.valor}>R${props.valor},00</Text>
             </View>
             
         </View>
-        </ImageBackground>
     )
 }
 
 const styles = StyleSheet.create({
-    backgroundImage: {
+    container: {
         flex: 1,
-        width: '100%',
-        alignItems: 'center'
+        width: '100%'
     },
     image: {
-        marginTop: 10,
-        borderTopLeftRadius: 6,
-        borderTopRightRadius: 6,
-        width: 400,
-        height: 300
+        width: '100%',
+        height: 300,
     },
-    box: {
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        padding: 10,
-        width: 400,
-        borderBottomLeftRadius: 6,
-        borderBottomRightRadius: 6,
+    modelo: {
+        backgroundColor: '#303a52',
+        color: '#fff',
+        height: 55,
+        justifyContent: "center",
+        paddingLeft: 15,
     },
-    placa: {
-        fontWeight: "bold",
-        fontSize: 30,
-        textAlign: 'center',
-        marginTop: 20,
-        paddingBottom: 5,
-        borderBottomWidth: 1,
-        borderBottomColor: 'rgba(255, 255, 255, 0.3)',
-        color: '#fff'
+    modeloText: {
+        fontSize: 20,
+        color: '#fff',
+        fontWeight: 'bold'
     },
     infoTitle: {
-        fontWeight: "bold",
-        fontSize: 20,
+        fontSize: 15,
         marginTop: 10,
-        color: '#fff'
     },
     infoText: {
-        fontSize: 15,
-        color: '#fff'
+        fontSize: 18,
+        fontWeight: 'bold'
     },
     valor: {
-        alignSelf: 'center',
-        marginTop: 50,
         borderRadius: 10,
         marginBottom: 40,
-        textAlign: 'center',
-        padding: 15,
-        fontSize: 30,
-        color: '#fff'
+        fontSize: 25,
+        fontWeight: 'bold'
+    },
+    items: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
     }
 })

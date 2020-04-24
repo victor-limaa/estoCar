@@ -3,7 +3,6 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity, AsyncStorage, Aler
 
 import api from '../api'
 
-import backgroundImg from '../../assets/background.png'
 import logo from '../../assets/logo.png'
 
 export default function Login ( {navigation} ){
@@ -27,10 +26,8 @@ export default function Login ( {navigation} ){
 
     return(
         <View style={styles.container}>
-            <ImageBackground source={backgroundImg} style={styles.backgroundImg}>
                 <Image source={logo} style={styles.logo} />
                 <View style={styles.loginBox}>
-                    <View>
                         <TextInput style={styles.input} 
                             onChangeText={text => setEmail(text)} 
                             keyboardType='email-address' placeholder='Email' />
@@ -38,50 +35,54 @@ export default function Login ( {navigation} ){
                             onChangeText={password => setPassword(password)} 
                             secureTextEntry={true} placeholder='Senha' />
                         <TouchableOpacity onPress={handleLogin}>
-                            <Text style={styles.button}>Entrar</Text>
+                            <Text style={styles.button}>Acessar</Text>
                         </TouchableOpacity>
-                    </View>
                 </View>
-            </ImageBackground>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#303a52'
+    },
+
+    loginBox: {
+        marginTop: 150,
     },
 
     logo: {
         marginBottom: 30,
+        width: 230,
+        height: 70,
+        resizeMode: "contain",
+        marginTop: 130,
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
 
-    backgroundImg: {
-        flex: 1,
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
     input: {
-        width: 300,
+        width: 350,
         height: 50,
-        marginBottom: 40,
         padding: 10,
-        borderBottomColor: '#ffcc00',
-        borderStyle: "solid",
-        borderBottomWidth: 1,
-        color: '#fff',
-        textAlign: "center",
-        fontSize: 15
+        color: '#edf0f5',
+        fontSize: 15,
+        backgroundColor: 'rgba(133, 158, 218, 0.2)',
+        borderRadius: 4,
+        alignSelf: "center",
+        marginBottom: 30,
     },
     button: {
-        width: 300,
+        width: 250,
         height: 50,
-        backgroundColor: '#ffcc00',
+        backgroundColor: '#9e579d',
         color: '#fff',
-        fontSize: 25,
+        fontSize: 20,
         borderRadius: 10,
         textAlign: "center",
-        padding: 5
+        padding: 10,
+        alignSelf: 'center',
+        marginTop: 50
     }
 })

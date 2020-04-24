@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, ImageBackground, Image, AsyncStorage, FlatList, TouchableOpacity } from 'react-native'
 import api from '../api'
-import backgroundImg from '../../assets/background.png'
 import logo from '../../assets/logo.png'
 import Card from '../components/card'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -28,7 +27,6 @@ export default function Home( {navigation} ){
 
     return(
         <View style={styles.container}>
-            <ImageBackground source={backgroundImg} style={styles.backgroundImg}>
                 <View style={styles.header}>
                     <Image source={logo} style={styles.logo} />
                     <TouchableOpacity onPress={handleLogout}>
@@ -43,11 +41,11 @@ export default function Home( {navigation} ){
                         placa={item.placa}
                         marca={item.marca}
                         modelo={item.modelo}
+                        valor={item.valor}
                         navigation={() => {navigation.navigate('Car', {id: item._id})}} />
                     )
                 } />
 
-            </ImageBackground>
         </View>
     )
 }
@@ -57,23 +55,19 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: '#ff5959'
-    },
-    backgroundImg: {
-        flex: 1,
-        width: '100%',
-        alignItems: 'center'
+        backgroundColor: '#e5e5e5'
     },
     header: {
-        backgroundColor: '#ff5959',
+        backgroundColor: '#303a52',
         width: '100%',
-        marginBottom: 20,
+        height: 65,
+        marginBottom: 10,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
     },
     logo: {
-        height: 70,
+        height: 40,
         resizeMode: "contain",
         alignSelf: 'center'
     }

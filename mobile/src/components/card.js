@@ -8,11 +8,11 @@ export default function Card(props){
                 <Image source={{uri: props.image}} style={styles.image} />
                 <View style={styles.info}>
                     <View>
-                    <Text style={styles.infoTitle}>{props.placa}</Text>
-                    <Text style={styles.infoText}>{props.marca} {props.modelo}</Text>
+                    <Text style={styles.infoTitle}>{props.modelo}</Text>
+                    <Text style={styles.infoText}>{props.valor}</Text>
                     </View>
                     <TouchableOpacity onPress={props.navigation}>
-                        <Text style={styles.button}>Veja mais</Text>
+                        <Text style={styles.button}>Mais Informações</Text>
                     </TouchableOpacity>
                 </View>
             
@@ -22,38 +22,44 @@ export default function Card(props){
 
 const styles = StyleSheet.create({
     boxContainer: {
-        backgroundColor: '#e9e9e9',
-        width: 350,
-        marginBottom: 15,
-        borderRadius: 10,
-        padding: 5
+        backgroundColor: '#303a52',
+        width: 360,
+        height: 300,
+        marginBottom: 20,
+        borderRadius: 5,
+        elevation: 2,
     },
     image: {
-        height: 250,
-        width: '100%',
-        resizeMode: "contain",
-        borderRadius: 3
+        height: 200,
+        width: 360,
+        borderTopLeftRadius: 5,
+        borderTopRightRadius: 5,
     },
     info: {
         marginTop: 20,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingLeft: 10,
+        paddingRight: 10
     },
     infoTitle: {
         fontSize: 20,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: '#fff'
     },
     infoText: {
-        fontSize: 20
+        fontSize: 15,
+        color: '#fff'
     },
     button: {
-        backgroundColor: '#ffcc00',
-        color: '#fff',
+        color: '#fc85ae',
+        borderStyle: 'solid',
+        borderColor: '#fc85ae',
+        borderWidth: 1,
         fontSize: 15,
         borderRadius: 5,
-        padding: 5,
-        width: 150,
-        textAlign: "center",
-        marginTop: 25
+        padding: 10,
+        textAlign: "center"
     }
 })
