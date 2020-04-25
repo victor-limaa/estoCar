@@ -34,7 +34,8 @@ function Home () {
                     cars.map(car => 
                         <div className='col-auto m-3' key={car._id}>
                             <Card placa={car.placa} imgCar={car.image}
-                            marca={car.marca} modelo={car.modelo} _id={car._id}/>
+                            marca={car.marca} modelo={car.modelo} _id={car._id}
+                            valor={car.valor} cambio={car.cambio}/>
                         </div>
                     )
                 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {FaPowerOff, FaBars} from 'react-icons/fa'
 import './styles.css'
 import { Link, useHistory } from 'react-router-dom'
+import logo from './../../assets/logo.png'
 
 function Navbar (props) {
     let history = useHistory()
@@ -16,7 +17,7 @@ function Navbar (props) {
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"><FaBars/></span>
             </button>
-            <h1 className='navbar-brand pl-3'>Estocar</h1>
+            <img src={logo} className='navbar-brand pl-3 logoNav'/>
             
             <div>
             <div className='collapse navbar-collapse' id="navbarTogglerDemo03">

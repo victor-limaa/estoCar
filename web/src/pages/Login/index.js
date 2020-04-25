@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {useHistory} from 'react-router-dom'
 import api from '../../api'
 import './styles.css'
+import logo from './../../assets/logo.png'
 
 function Login (){
 
@@ -40,18 +41,21 @@ function Login (){
       <>
       <div className='myBg'>
       <div className="container">
-         <div className="row align-items-center justify-content-center centralize">
-            <div className='loginContainer'>
-               <h1>EstoCar</h1>
+         <div className='row'>
+            <div className='col-3'></div>
+            <div className='col-6'>
+         <div className="d-flex flex-column align-items-center justify-content-center centralize">
+               <img src={logo} className='mb-5'/>
 
                <form className='form-group'>
-                  <h4>Email:</h4>
-                  <input className='form-control shadow mb-3' type='text' name='email' onChange={handleEmail} />
-                  <h4>Senha:</h4>
-                  <input className='form-control shadow' type='password' name='senha' onChange={handlePassword} />
+                  <input className='form-control mb-5 mt-5 input' type='text' 
+                    placeholder='Email' name='email' onChange={handleEmail} />
+                  <input className='form-control input' type='password' 
+                    placeholder='Senha' name='senha' onChange={handlePassword} />
                   <br/>
                   <button onClick={login} className='btn myBtn'>Entrar</button>
                </form>
+            </div>
          </div>
          </div>
       </div>

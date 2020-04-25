@@ -1,8 +1,14 @@
 .btnColor{
-    background-color: #f4f4f4;
+    background-color: #9e579d;
     margin-left: 20px;
+    color: #fff;
 }
 
 .sizeSearch{
     width: 600px;
+}
+
+.logoNav{
+    width: 150px;
+    margin: 5px;
 }
